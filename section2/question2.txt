@@ -1,0 +1,32 @@
+What is the purpose of React's `useEffect` hook? Provide an example use case.
+
+-- useEffect is used to fire off a function on page render or when a variable(s) is updated. This can be anything from connecting to an external system to fetching data from an API. You can give useEffect a dependency array where if empty it will only fire off once on page load. If you give it a variable, it will fire whenever that variable is updated. If not included, the effect will fire off on each re-render.
+
+For example:
+
+Let's say we have a function to fetch all posts from an API that connects to a database.
+
+First we'll define the state and function needed:
+
+const [data, setData] = useState({})
+
+const fetchData = async () => {
+  try{
+    const response = await fetch("/api/v1/posts")
+    if (!response.ok) {
+      throw new Error("something went wrong!")
+    }
+    const responseBody = await response.JSON()
+    setData(responseBody.posts)
+  } catch (error) {
+    console.error(error)
+  } 
+}
+
+We want this data to show upon page load, so we can use useEffect.
+
+useEffect(() => {
+  fetchData()
+}, [])
+
+In useEffect's callback function, we tell it to run the fetchData function, which will fetch the data and set it in state. We give it an empty dependency array to specify we want it to only run once.
