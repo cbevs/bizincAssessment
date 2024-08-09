@@ -1,0 +1,23 @@
+- Create a table `users` with columns for `id`, `name`, and `email`.
+
+CREATE TABLE users(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE
+);
+
+// I chose to do a serial primary key so they auto increment, preventing manual input from causing errors when adding a user. If I was to create it without that, I would do 'id INTEGER PRIMARY KEY'. No person has the same email as another, so to keep data integrity, I added a unique attribute to email.
+
+- Insert one sample user into the table.
+
+INSERT INTO users(name, email) VALUES 
+  ('Chris Bevevino', 'cnbevevino@gmail.com');
+
+  // If there was not serial attribute on "id", it would include it like so:
+  INSERT INTO users(id, name, email) VALUES 
+  (1, 'Chris Bevevino', 'cnbevevino@gmail.com');
+
+
+- Retrieve all users from the table.
+
+SELECT * FROM users;
