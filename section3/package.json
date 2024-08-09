@@ -1,0 +1,13 @@
+{
+  "name": "section3",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "For Internship Assessment",
+  "main": "app.js",
+  "repository": "https://github.com/cbevs/bizincAssessment",
+  "author": "cbevs",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
