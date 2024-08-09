@@ -1,0 +1,3 @@
+What is a primary key in PostgreSQL, and why is it important?
+
+-- A primary key is an attribute given to a column so that rows can be unique from other rows. No two rows can have a column that has the same primary key. For example, if I have a primary key on the ID column, I cannot have two users that have an ID of 1. This allows us to easily be able to distinguish rows from each other, prevent conflicts of data, and ensure data integrity.
