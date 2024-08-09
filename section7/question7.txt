@@ -1,0 +1,3 @@
+What is the difference between a WordPress post and a page?
+
+-- A post is anything that you want to publish to your website, such as a blog entry or a new article. A page displays content and is static. A page example is an About page and an example of a post is a new blog entry.
